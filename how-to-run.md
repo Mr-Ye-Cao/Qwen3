@@ -25,3 +25,15 @@ python -m vllm.entrypoints.openai.api_server \
   --max-model-len 32768 \
   --dtype bfloat16 \
   --api-key "sk-qwen3-262d69fda52130a25880846f2596aabaf637294be779fb2b248378ecdb153153"
+
+# Qwen3-4B:
+conda activate qwen3
+python -m vllm.entrypoints.openai.api_server \
+    --model Qwen/Qwen3-4B \
+    --served-model-name qwen3-4b \
+    --port 8000 \
+    --host 0.0.0.0 \
+    --max-model-len 32768 \
+    --dtype bfloat16 \
+    --max-num-seqs 2 \
+    --api-key "sk-qwen3-262d69fda52130a25880846f2596aabaf637294be779fb2b248378ecdb153153"
